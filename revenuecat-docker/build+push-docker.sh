@@ -4,7 +4,7 @@ echo "Building docker image locally"
 docker build .. --file Dockerfile.sql --platform=linux/amd64 -t 602297180373.dkr.ecr.us-east-1.amazonaws.com/apicurio-registry:sql-2.5.8.Revenuecat
 
 echo
-echo "Pushing built docker image as 'deploy-manager:latest'"
+echo "Pushing built docker image"
 docker push 602297180373.dkr.ecr.us-east-1.amazonaws.com/apicurio-registry:sql-2.5.8.Revenuecat
 
 if [[ $? -ne 0 ]]; then
