@@ -43,13 +43,13 @@ jobs:
       # Open-Source Machine emulator that allows you to emulate multiple CPU architectures on your machine
       - name: Set up QEMU
         if: github.event_name == 'push'
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@27d0a4f181a40b142cce983c5393082c365d1480 # v1.2.0
 
       # Docker CLI plugin for extended build capabilities with BuildKit
       - name: Set up Docker Buildx
         if: github.event_name == 'push'
         id: buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@f211e3e9ded2d9377c8cadc4489a4e38014bc4c9 # v1.7.0
 
       - name: Inspect builder
         if: github.event_name == 'push'
@@ -125,13 +125,13 @@ jobs:
       # Open-Source Machine emulator that allows you to emulate multiple CPU architectures on your machine
       - name: Set up QEMU
         if: github.event_name == 'push'
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@27d0a4f181a40b142cce983c5393082c365d1480 # v1.2.0
 
       # Docker CLI plugin for extended build capabilities with BuildKit
       - name: Set up Docker Buildx
         if: github.event_name == 'push'
         id: buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@f211e3e9ded2d9377c8cadc4489a4e38014bc4c9 # v1.7.0
 
       - name: Inspect builder
         if: github.event_name == 'push'
@@ -239,7 +239,7 @@ jobs:
           docker build --push -f ./distro/docker/target/docker/Dockerfile.native -t ttl.sh/${{ github.sha }}/apicurio/apicurio-registry-native:1d app/
 
       - name: Setup Minikube
-        uses: manusa/actions-setup-minikube@v2.9.0
+        uses: manusa/actions-setup-minikube@b65276017fdec6f1e6498129fb740e34e260dc55 # v2.18.0
         with:
           minikube version: 'v1.31.1'
           kubernetes version: 'v1.26.3'
@@ -399,5 +399,5 @@ jobs:
   trigger-3scale-deploy:
     needs: [build-verify, build-verify-ui]
     if: github.event_name == 'push'
-    uses: apicurio/apicurio-3scale-gitops/.github/workflows/deploy_latest_registry.yml@main
+    uses: apicurio/apicurio-3scale-gitops/.github/workflows/deploy_latest_registry.yml@f1e5f505e8e66156707340ab750b7e43965de543 # main
     secrets: inherit
