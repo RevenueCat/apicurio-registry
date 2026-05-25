@@ -399,5 +399,5 @@ jobs:
   trigger-3scale-deploy:
     needs: [build-verify, build-verify-ui]
     if: github.event_name == 'push'
-    uses: apicurio/apicurio-3scale-gitops/.github/workflows/deploy_latest_registry.yml@main
+    uses: apicurio/apicurio-3scale-gitops/.github/workflows/deploy_latest_registry.yml@f1e5f505e8e66156707340ab750b7e43965de543 # main
     secrets: inherit
