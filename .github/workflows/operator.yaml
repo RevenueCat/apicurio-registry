@@ -29,7 +29,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
       - name: Setup Minikube-Kubernetes
-        uses: manusa/actions-setup-minikube@3856c6fa039819f1c8e7e248b1fc5a8564e354c9 # v2.9.0
+        uses: manusa/actions-setup-minikube@b65276017fdec6f1e6498129fb740e34e260dc55 # v2.18.0
         with:
           minikube version: v1.28.0
           kubernetes version: v1.25.0
